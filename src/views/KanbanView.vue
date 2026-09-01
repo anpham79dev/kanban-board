@@ -1,5 +1,9 @@
-<script lang="ts" setup></script>
+<script setup lang="ts">
+import BaseLayout from '@/layouts/BaseLayout.vue'
+</script>
 
 <template>
-    <div class="h1">Kanban view</div>
+    <BaseLayout>
+        <div class="h1">Kanban board view</div>
+    </BaseLayout>
 </template>
