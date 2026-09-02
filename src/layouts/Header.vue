@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { IconPlus, IconShare } from '@tabler/icons-vue'
 
@@ -8,17 +7,13 @@ interface NavItem {
     to: string
 }
 
-const props = withDefaults(
+withDefaults(
     defineProps<{
         avatarUrl?: string
         navItems?: NavItem[]
     }>(),
     {
         avatarUrl: '/avt.png',
-        navItems: () => [
-            { label: 'Board', to: '/' },
-            { label: 'Activity', to: '/activity' },
-        ],
     },
 )
 

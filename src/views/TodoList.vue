@@ -2,6 +2,9 @@
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import ViewSwitcher from './partials/ViewSwitcher.vue'
 import TaskList from './partials/TaskList.vue'
+import { useTaskStore } from '@/store/taskStore.ts'
+
+const { columns } = useTaskStore()
 </script>
 
 <template>
@@ -13,8 +16,12 @@ import TaskList from './partials/TaskList.vue'
                 <ViewSwitcher />
             </div>
 
-            <div>
-                <TaskList />
+            <div class="d-flex justify-content-between mt-3">
+                <TaskList
+                    v-for="column in columns"
+                    :key="column.id"
+                    :column="column"
+                />
             </div>
         </div>
     </BaseLayout>
