@@ -62,7 +62,7 @@ const isActive = (to: string) => route.path === to
                 <div class="d-none d-md-flex align-items-center gap-2">
                     <button
                         type="button"
-                        class="btn btn-outline-light btn-sm d-flex align-items-center gap-1"
+                        class="btn btn-outline-light btn-sm rounded-pill d-flex align-items-center gap-1"
                         @click="emit('invite')"
                     >
                         <IconPlus :size="16" />
@@ -71,7 +71,7 @@ const isActive = (to: string) => route.path === to
 
                     <button
                         type="button"
-                        class="btn btn-primary btn-sm d-flex align-items-center gap-1"
+                        class="btn btn-primary btn-sm rounded-pill d-flex align-items-center gap-1"
                         @click="emit('share')"
                     >
                         <IconShare :size="16" />

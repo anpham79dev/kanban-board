@@ -7,7 +7,7 @@ const currentView = ref<ViewType>('list')
 
 <template>
     <div
-        class="view-switcher d-flex align-self-center"
+        class="view-switcher d-flex align-self-center flex-wrap"
         role="group"
         aria-label="View mode"
     >

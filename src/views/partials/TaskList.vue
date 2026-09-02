@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { KanbanColumn } from '@/types/task'
 import { IconDots } from '@tabler/icons-vue'
+import TaskCard from './TaskCard.vue'
 
 defineProps<{ column: KanbanColumn }>()
 </script>
@@ -18,13 +19,18 @@ defineProps<{ column: KanbanColumn }>()
             </div>
         </div>
 
-        <div class="task-column__body"></div>
+        <div class="d-flex flex-column gap-3 mt-3">
+            <TaskCard
+                v-for="task in column.tasks"
+                :key="task.id"
+                :task="task"
+            />
+        </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.task-column {
-    width: 280px;
-    flex-shrink: 0;
+.task-column__settings {
+    color: var(--tblr-secondary);
 }
 </style>

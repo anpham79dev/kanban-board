@@ -16,11 +16,12 @@ const { columns } = useTaskStore()
                 <ViewSwitcher />
             </div>
 
-            <div class="d-flex justify-content-between mt-3">
+            <div class="row g-4 mt-3">
                 <TaskList
                     v-for="column in columns"
                     :key="column.id"
                     :column="column"
+                    class="col-3"
                 />
             </div>
         </div>
