@@ -11,14 +11,14 @@ defineProps<{ task: Task }>()
         <div class="fw-bold mb-1">{{ task.task_title }}</div>
 
         <p
-            v-if="task.description"
+            v-if="task.task_description"
             class="task-card__excerpt text-secondary small mb-2"
         >
-            {{ task.description }}
+            {{ task.task_description }}
         </p>
 
         <div
-            v-if="formattedDate(task.created_at) || priorityInfo(task.priority)"
+            v-if="formattedDate(task.created_at) || priorityInfo(task.task_priority)"
             class="d-flex align-items-center gap-2 mb-2"
         >
             <span
@@ -30,12 +30,12 @@ defineProps<{ task: Task }>()
             </span>
 
             <span
-                v-if="priorityInfo(task.priority)"
+                v-if="priorityInfo(task.task_priority)"
                 class="badge"
-                :class="`bg-${priorityInfo(task.priority)!.color}-lt`"
+                :class="`bg-${priorityInfo(task.task_priority)!.color}-lt`"
             >
                 <IconFlag :size="14" />
-                {{ priorityInfo(task.priority)!.label }}
+                {{ priorityInfo(task.task_priority)!.label }}
             </span>
         </div>
 
