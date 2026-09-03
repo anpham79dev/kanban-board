@@ -5,7 +5,7 @@ import TaskCard from './TaskCard.vue'
 import { ref } from 'vue'
 import AddTaskModal from './form/AddTaskModal.vue'
 
-defineProps<{ column: KanbanColumn }>()
+const props = defineProps<{ column: KanbanColumn }>()
 
 const isOpen = ref<boolean>(false)
 

@@ -8,6 +8,7 @@ interface Task {
     task_title: string
     task_description: string | null
     task_priority: number | null
+    task_deadline: Date | null
     step_id: number
     assignee_ids: number[]
     author_id: number
@@ -17,6 +18,13 @@ interface Task {
 
 interface KanbanColumn extends Step {
     tasks: Task[]
+}
+
+interface AddTaskForm {
+    task_title: string
+    task_description: string
+    task_priority: number | null
+    task_deadline: string | null
 }
 
 const TaskPriority = [
@@ -38,6 +46,6 @@ const TaskPriority = [
     },
 ]
 
-export type { Step, Task, KanbanColumn }
+export type { Step, Task, KanbanColumn, AddTaskForm }
 
 export { TaskPriority }
